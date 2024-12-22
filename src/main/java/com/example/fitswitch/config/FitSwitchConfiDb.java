@@ -1,15 +1,17 @@
-package com.example.fitswitch.config;
+package com.interfaz.Dashboard.config;
+
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
 @Configuration
-public class ConfigFitSwitch {
+public class FitSwitchConfiDb {
+
+    ///CONFIGURACION (CONEXION) A LA BASE DE DATOS FIT SWITCH
     @Bean(name = "fitSwitchDataSource")
     public DataSource fitSwitchDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
