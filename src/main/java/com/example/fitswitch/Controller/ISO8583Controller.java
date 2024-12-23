@@ -1,4 +1,5 @@
-package com.interfaz.Dashboard.controller;
+package com.example.fitswitch.Controller;
+
 
 import com.example.fitswitch.Model.ISO8583;
 import com.example.fitswitch.Repository.ISO8583Repository;

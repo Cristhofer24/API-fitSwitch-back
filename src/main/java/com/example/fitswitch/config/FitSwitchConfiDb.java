@@ -1,5 +1,5 @@
-package com.interfaz.Dashboard.config;
 
+package com.example.fitswitch.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
