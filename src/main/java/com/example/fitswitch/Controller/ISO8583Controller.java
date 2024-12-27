@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/iso-8583")
@@ -39,5 +42,18 @@ public class ISO8583Controller {
         return iso8583Repository.findByFechaRange(wiso012LocalDateTime, wiso015SettlementDatel);
     }
 
+
+
+    @GetMapping("/semaforo")
+    public List<Map<String, Object>> getSemaforoData() {
+        List<ISO8583> registros = iso8583Repository.findAll();
+
+        return registros.stream().map(registro -> {
+            Map<String, Object> map = new HashMap<>();
+            map.put("responseCode", registro.getWiso039ResponseCode());
+            map.put("color", "000".equals(registro.getWiso039ResponseCode()) ? "verde" : "rojo");
+            return map;
+        }).collect(Collectors.toList());
+    }
 
 }

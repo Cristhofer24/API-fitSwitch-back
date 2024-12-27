@@ -68,5 +68,13 @@ public class ISO8583 {
     @Column (name = "WISO_013_LOCALDATE")
     private LocalDateTime wiso013LocalDate;
 
+
+    public String getWiso039ResponseCode() {
+        return wiso039ResponseCode;
+    }
+
+    public void setWiso039ResponseCode(String wiso039ResponseCode) {
+        this.wiso039ResponseCode = wiso039ResponseCode;
+    }
 }
 
