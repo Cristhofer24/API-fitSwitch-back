@@ -4,10 +4,9 @@ package com.example.fitswitch.Controller;
 import com.example.fitswitch.Model.ISO8583;
 import com.example.fitswitch.Repository.ISO8583Repository;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Field;
 import java.time.LocalDateTime;
@@ -63,11 +62,13 @@ public class ISO8583Controller {
             @RequestParam("WISO_012_LOCALDATETIME")
             @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime wiso012LocalDateTime,
 
-            @RequestParam("WISO_015_SETTLEMENTDATEL")
-            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime wiso015SettlementDatel
+            @RequestParam("WISO_013_LOCALDATE")
+            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime wiso013LocalDate
     ) {
-        return iso8583Repository.findByFechaRange(wiso012LocalDateTime, wiso015SettlementDatel);
+        return iso8583Repository.findByFechaRange(wiso012LocalDateTime, wiso013LocalDate);
     }
+
+
 
     ////Permite poner el semaforo de acuerdo a la condición
     @GetMapping("/semaforo")
@@ -82,6 +83,5 @@ public class ISO8583Controller {
         }).collect(Collectors.toList());
     }
 
-
-
 }
+

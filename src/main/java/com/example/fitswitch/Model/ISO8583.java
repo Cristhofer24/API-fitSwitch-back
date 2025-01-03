@@ -65,11 +65,15 @@ public class ISO8583 {
 
     //////CAMPOS PARA LOS INPUTS DE FILTROS
 
+    ////CAMPOS PARA QUE SE USARAN PARA LOS INPUTS DEL FILTRADO
     @Column(name = "WISO_012_LOCALDATETIME")
     private LocalDateTime wiso012LocalDateTime;
 
     @Column (name = "WISO_013_LOCALDATE")
     private LocalDateTime wiso013LocalDate;
+
+    ////////SON LOS DOS CAMPOS DE ARRIBA QUE SE USARAN PARA LOS FILTROS.
+
 
     ////getter and setters de campos obligatorios que piden.
     public String getWiso039ResponseCode() {
