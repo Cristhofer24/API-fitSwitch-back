@@ -13,14 +13,18 @@ import java.util.List;
 public interface ISO8583Repository extends JpaRepository<ISO8583,String> {
 
     // Consulta con los nombres exactos de los campos de la tabla para los inputs de filtros de busqueda
+<<<<<<< HEAD
     @Query("SELECT i FROM ISO8583 i WHERE i.wiso012LocalDateTime BETWEEN :WISO_012_LOCALDATETIME AND :WISO_015_SETTLEMENTDATEL")
 
 
 
 
+=======
+    @Query("SELECT i FROM ISO8583 i WHERE i.wiso012LocalDateTime BETWEEN :WISO_012_LOCALDATETIME AND :WISO_013_LOCALDATE")
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
     List<ISO8583> findByFechaRange(
             @Param("WISO_012_LOCALDATETIME") LocalDateTime WISO_012_LOCALDATETIME,
-            @Param("WISO_015_SETTLEMENTDATEL") LocalDateTime WISO_015_SETTLEMENTDATEL
+            @Param("WISO_013_LOCALDATE") LocalDateTime WISO_013_LOCALDATE
     );
 
 }

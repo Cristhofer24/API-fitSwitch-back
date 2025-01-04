@@ -5,8 +5,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Where;
 
+<<<<<<< HEAD
 import java.math.BigDecimal;
 import java.time.LocalDate;
+=======
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
 import java.time.LocalDateTime;
 
 
@@ -98,12 +101,19 @@ public class ISO8583 {
     @Column(name = "WISO_TEMPOTRX_VALUE")
     private BigDecimal wisoTempoTrxValue;
 
+<<<<<<< HEAD
     @Column(name = "WISO_TEMPOBDD_VALUE")
     private BigDecimal wisoTempoBddValue;
+=======
+    ////CAMPOS PARA QUE SE USARAN PARA LOS INPUTS DEL FILTRADO
+    @Column(name = "WISO_012_LOCALDATETIME")
+    private LocalDateTime wiso012LocalDateTime;
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
 
     @Column(name = "WISO_TEMPOAUT_VALUE")
     private BigDecimal wisoTempoAutValue;
 
+<<<<<<< HEAD
     @Column(name = "WISO_IP")
     private String wisoIp;
 
@@ -215,6 +225,12 @@ public class ISO8583 {
         this.wiso015SettlementDatel = wiso015SettlementDatel;
     }
 
+=======
+    ////////SON LOS DOS CAMPOS DE ARRIBA QUE SE USARAN PARA LOS FILTROS.
+
+
+    ////getter and setters de campos obligatorios que piden.
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
     public String getWiso039ResponseCode() {
         return wiso039ResponseCode;
     }
@@ -231,6 +247,7 @@ public class ISO8583 {
         this.wiso039pRespondeDetail = wiso039pRespondeDetail;
     }
 
+<<<<<<< HEAD
     public String getWiso044AddrespData() {
         return wiso044AddrespData;
     }
@@ -245,6 +262,31 @@ public class ISO8583 {
 
     public void setWiso103AccountId2(String wiso103AccountId2) {
         this.wiso103AccountId2 = wiso103AccountId2;
+=======
+
+    public String getWiso000MessageType() {
+        return wiso000MessageType;
+    }
+
+    public void setWiso000MessageType(String wiso000MessageType) {
+        this.wiso000MessageType = wiso000MessageType;
+    }
+
+    public String getWiso002Pan() {
+        return wiso002Pan;
+    }
+
+    public void setWiso002Pan(String wiso002Pan) {
+        this.wiso002Pan = wiso002Pan;
+    }
+
+    public String getWiso003ProcessingCode() {
+        return wiso003ProcessingCode;
+    }
+
+    public void setWiso003ProcessingCode(String wiso003ProcessingCode) {
+        this.wiso003ProcessingCode = wiso003ProcessingCode;
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
     }
 
     public String getWiso102AccountId1() {
@@ -255,6 +297,7 @@ public class ISO8583 {
         this.wiso102AccountId1 = wiso102AccountId1;
     }
 
+<<<<<<< HEAD
 //    public String getWiso114ExtendedData() {
 //        return wiso114ExtendedData;
 //    }
@@ -309,6 +352,15 @@ public class ISO8583 {
 
     public void setWisoIp(String wisoIp) {
         this.wisoIp = wisoIp;
+=======
+    public String getWiso103AccountId2() {
+        return wiso103AccountId2;
+    }
+
+    public void setWiso103AccountId2(String wiso103AccountId2) {
+        this.wiso103AccountId2 = wiso103AccountId2;
+>>>>>>> 81fe4f9f392078308732c1dc2f25794e7254b011
     }
 }
+
 
