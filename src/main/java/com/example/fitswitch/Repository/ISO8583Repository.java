@@ -14,6 +14,10 @@ public interface ISO8583Repository extends JpaRepository<ISO8583,String> {
 
     // Consulta con los nombres exactos de los campos de la tabla para los inputs de filtros de busqueda
     @Query("SELECT i FROM ISO8583 i WHERE i.wiso012LocalDateTime BETWEEN :WISO_012_LOCALDATETIME AND :WISO_015_SETTLEMENTDATEL")
+
+
+
+
     List<ISO8583> findByFechaRange(
             @Param("WISO_012_LOCALDATETIME") LocalDateTime WISO_012_LOCALDATETIME,
             @Param("WISO_015_SETTLEMENTDATEL") LocalDateTime WISO_015_SETTLEMENTDATEL

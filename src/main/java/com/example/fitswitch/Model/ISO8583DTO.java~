@@ -1,0 +1,94 @@
+package com.example.fitswitch.Model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+public class ISO8583DTO {
+    //Columnas proncipales a mostrar en el Front End
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "WISO_000_MESSAGE_TYPE")
+    private String wiso000MessageType;
+
+    @Column(name = "WISO_003_PROCESSINGCODE")
+    private String wiso003ProcessingCode;
+
+    @Column(name = "WISO_018_MERCHANTTYPE")
+    private String wiso018MerchantType;
+
+    @Column(name = "WISO_024_NETWORKID")
+    private String wiso024NetworkId;
+
+    @Column(name = "WISO_007_TRANSDATETIME")
+    private LocalDateTime wiso007TransDatetime;
+
+    @Column(name = "WISO_002_PAN")
+    private String wiso002Pan;
+
+    //Columnas ordenadas de mayor a menor
+
+
+    @Column(name = "WISO_004_AMOUNTTRANSACTION")
+    private BigDecimal wiso004AmountTransaction;
+
+    @Column(name = "WISO_008_BILLFEEAMOUNT")
+    private BigDecimal wiso008BollFeeAmount;
+
+    @Column(name = "WISO_011_SYSAUDITNUMBER")
+    private String wiso011SysAuditNumber;
+
+    //Filtros para los inputs
+
+    @Column(name = "WISO_012_LOCALDATETIME")
+    private LocalDateTime wiso012LocalDateTime;
+
+    @Column(name = "WISO_013_LOCALDATE")
+    private LocalDate getWiso013LocalDate;
+
+    ////////////////////////////////////////////
+
+    @Column(name = "WISO_015_SETTLEMENTDATEL")
+    private LocalDateTime wiso015SettlementDatel;
+
+    @Column(name = "WISO_038_AUTORIZATIONNUMBER")
+    private String wiso038AutorizationNumber;
+
+    @Column(name = "WISO_039_RESPONSECODE")
+    private String wiso039ResponseCode;
+
+    @Column(name = "WISO_039P_RESPONSEDETAIL")
+    private String wiso039pRespondeDetail;
+
+    @Column(name = "WISO_044_ADDRESPDATA")
+    private String wiso044AddrespData;
+
+    @Column(name = "WISO_102_ACCOUNTID_1")
+    private String wiso102AccountId1;
+
+    @Column(name = "WISO_103_ACCOUNTID_2")
+    private String wiso103AccountId2;
+
+    //Campos XML
+
+    @Column(name = "WISO_BITMAP")
+    private String wisoBitmap;
+
+    @Column(name = "WISO_TEMPOTRX_VALUE")
+    private BigDecimal wisoTempoTrxValue;
+
+    @Column(name = "WISO_TEMPOBDD_VALUE")
+    private BigDecimal wisoTempoBddValue;
+
+    @Column(name = "WISO_TEMPOAUT_VALUE")
+    private BigDecimal wisoTempoAutValue;
+
+    @Column(name = "WISO_IP")
+    private String wisoIp;
+
+}

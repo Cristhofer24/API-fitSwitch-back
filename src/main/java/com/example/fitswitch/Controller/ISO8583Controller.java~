@@ -50,9 +50,6 @@ private ISO8583Repository iso8583Repository;
     ) {
         return iso8583Repository.findByFechaRange(wiso012LocalDateTime, wiso015SettlementDatel);
     }
-    @GetMapping("/semaforo")
-    public List<Map<String, Object>> obtenerSemaforo() {
-        return iso8583Service.getSemaforoData();
-    }
+
 
 }
